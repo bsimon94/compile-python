@@ -35,3 +35,11 @@ $ which python
 
 $ make install
 $ git status
+
+$ git status
+$ git add
+$ git commit -m "adding skeleton"
+$ git push
+
+$ rm -rf Python-3.12.11/
+$ git restore --staged Python-3.12.11/

@@ -1,1 +1,4 @@
+pytest
 ludwig
+PyYAML
+cython

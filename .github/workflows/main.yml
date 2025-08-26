@@ -4,11 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: set up Python 3.12
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.12
-    - name: install dependencies
-      run: |
-        make install
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Upgrade pip, setuptools, wheel
+        run: pip install --upgrade pip setuptools wheel
+      - name: Install Cython (if building from source)
+        run: pip install cython
+      - name: Install dependencies
+        run: pip install -r requirements.txt
